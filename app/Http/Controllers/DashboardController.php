@@ -9,7 +9,7 @@ use App\Services\DashboardDataService;
 class DashboardController extends Controller
 {
     public function __invoke(Request $request, DashboardDataService $service){
-        
+
         $roleId = $request->user()->role_id;
 
         switch ($roleId) {
@@ -19,7 +19,7 @@ class DashboardController extends Controller
                 $viewData = $service->adminDashboardData();
                 return view('dashboard.admin', $viewData);
 
-            case UserRole::TEACHER: // IF TEACHER
+            case UserRole::TEACHER: // IF TEACHER ///////
 
                 return view('dashboard.teacher');
 
